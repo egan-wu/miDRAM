@@ -2,18 +2,19 @@
 #define REQUEST_H
 
 #include <cstdint>
+#include "common.hpp"
 
 namespace DRAM {
 
 enum class RequestType { READ, WRITE };
 
 struct Request {
-    uint64_t address;
+    address addr;
     RequestType type;
     uint32_t timestamp;
 
-    Request(uint64_t addr, RequestType t, uint32_t ts)
-        : address(addr), type(t), timestamp(ts) {}
+    Request(address a, RequestType t, uint32_t ts)
+        : addr(a), type(t), timestamp(ts) {}
 };
 
 }

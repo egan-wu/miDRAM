@@ -3,18 +3,36 @@
 
 #include <cstdint>
 #include <vector>
+#include "common.hpp"
 #include "config.hpp"
 
 namespace DRAM {
-    
+
+    class Bank {
+    private:
+        std::vector<std::vector<bool>> cells;
+
+    public:
+
+    };
+
+    class Die {
+    private:
+        std::vector<Die> banks;
+        
+    public:
+        uint8_t read(address addr);
+        void write(address addr, uint8_t data);
+    };
+
     class Dram {
     private:
         std::vector<std::vector<uint8_t>> memory;
 
     public:
         Dram();
-        uint8_t read(uint64_t address);
-        void write(uint64_t address, uint8_t data);
+        uint8_t read(address addr);
+        void write(address addr, uint8_t data);
     };
 }
 

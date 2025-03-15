@@ -16,13 +16,13 @@ void DramController::processRequests() {
         
         switch (req.type) {
             case RequestType::READ:
-                data = dram.read(req.address);
-                std::cout << "Read data: " << static_cast<int>(data) << " from " << req.address << std::endl;
+                data = dram.read(req.addr);
+                std::cout << "Read data: " << static_cast<int>(data) << " from " << req.addr << std::endl;
                 break;
 
             case RequestType::WRITE:
-            dram.write(req.address, 0xFF);
-                std::cout << "Write 0xFF to " << req.address << std::endl;
+            dram.write(req.addr, 0xFF);
+                std::cout << "Write 0xFF to " << req.addr << std::endl;
                 break;
 
             default:
