@@ -10,13 +10,13 @@ namespace DRAM {
  * 
  *  TOTALSIZE: 8192 * 1024 * 8 (bits) = 8 (M-Bytes)
  */
-struct config {
-    static constexpr uint32_t ROWS = 8192;
-    static constexpr uint32_t COLUMNS = 1024;
-    static constexpr uint32_t BANKS = 8;
-    static constexpr uint32_t TIMING_tRCD = 15;
-    static constexpr uint32_t TIMING_tCAS = 15;
-    static constexpr uint32_t TIMING_tRP = 12;
+struct Config {
+    uint32_t ROWS = 8192;
+    uint32_t COLUMNS = 1024;
+    uint32_t BANKS = 8;
+    uint32_t TIMING_tRCD = 15;
+    uint32_t TIMING_tCAS = 15;
+    uint32_t TIMING_tRP = 12;
 };
 
 }

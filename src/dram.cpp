@@ -2,8 +2,9 @@
 
 namespace DRAM {
 
-Dram::Dram() {
-    memory.resize(config::BANKS, std::vector<uint8_t>(config::ROWS * config::COLUMNS, 0));
+Dram::Dram(Config cfg) : config(cfg)
+{
+    memory.resize(config.BANKS, std::vector<uint8_t>(config.ROWS * config.COLUMNS, 0));
 }
 
 uint8_t Dram::read(address addr) {

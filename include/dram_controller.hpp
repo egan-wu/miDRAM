@@ -13,6 +13,7 @@ private:
     std::queue<Request> requestQueue;
 
 public:
+    DramController(Config config) : dram(config) {};
     void addRequest(const Request& req);
     void processRequests();
 };

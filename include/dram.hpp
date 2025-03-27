@@ -28,9 +28,10 @@ namespace DRAM {
     class Dram {
     private:
         std::vector<std::vector<uint8_t>> memory;
+        Config config;
 
     public:
-        Dram();
+        Dram(Config cfg);
         uint8_t read(address addr);
         void write(address addr, uint8_t data);
     };
